@@ -13,15 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('events', function (Blueprint $table) {
+        Schema::create('ticket_types', function (Blueprint $table) {
             $table->id();
-            $table->string("title");
-            $table->text('description')->nullable();
-            $table->dateTime("start_date");
-            $table->dateTime("end_date");
-            $table->integer("lineup");
-            $table->integer("maximum_tickets");
-            $table->unsignedBigInteger("user_id");
+            $table->string("name");
+            $table->float("price");
             $table->timestamps();
         });
     }
@@ -33,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('ticket_types');
     }
 };
