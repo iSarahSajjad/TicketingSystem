@@ -1,0 +1,1186 @@
+{
+	"info": {
+		"_postman_id": "5488da40-1dfb-4a86-aa2e-fd0f98aaf24d",
+		"name": "TicketingSystem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "sarah@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "signin",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "sarah@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.21.6"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 May 2022 14:14:12 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjk0NDU1YzJhYTg1OTgwNmY1NjE5ZmE3MjU4NzNkZDVhM2Y2NDg3MDBjNjA5MDBiMjZmY2JkMjRhMzcyMmM2MWNjZmVkMzIwZjk4NTk3MjgiLCJpYXQiOjE2NTM3NDcyNTIuOTgzMDY3LCJuYmYiOjE2NTM3NDcyNTIuOTgzMDY4LCJleHAiOjE2Njk2NDQ4NTIuOTgwMjE4LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.J5OWxVYQejJro44zI-0OtvZMGnX_suGcQ1cBJsW04WaU0HareOuzSnA8TzCFju4vUVKj8nJfdBK3Zl5vMAs4gPAtcfBpSXKkKnVLjYlxD0qUxyN3zL-kd8tOrP5koayO6v3gRMCkVRyHddk3fRIWF7qXdq7XfE_1-PbvXRVNaQAwX3HlJlLWBT9hyVoQN9JB5M91PJJ1Ep5KcIqKzpjljh5hnyrEHOCZLFOVb-9t34PX40MXBPHho8V7ixphNPolmoPB3w3UGSnqDG2gk3wbmAA3PRHIirrsggCjfy7-8yoaHDG5gBp19jocU2zluRWBwJZXUnNBLx4lLop18jt_SJHayyEJuC4TZ1dYmYu_J1XHtZF4y5ENGhnqlRtrMU1GSAJ1M9dBZt2niURANnu-e2rRE4Dc6u3s1fpYBGl-Cma8DKsTtcS4cuYkhrfN-65xDKE4KEcLDa0klMRJIv7VAlqE_77sCVnkQMMvpDHRVPuCxPtIY75f9OBINeCEw9HlQxd0uyHr_eXTiXRUMCjAyCEbj7jI0_CLTGdf3TKxnibq3ZtHl2_Rxtaa1lqsld-wLEDJQK9wANHJ8msgG-TPcac9yFJiE8CSx3BqcFEoCFbVmN0k4SWdr-0U9ttPSzZM8g3zLoiA4DzXWJxrVfTjM1VZ-Y1ciGDyi29yxFrXSBc\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Event",
+			"item": [
+				{
+					"name": "Get All Events",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/events",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/events/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Event",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/events/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"events",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.21.6"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 May 2022 17:35:18 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"title\": \"My first event\",\n    \"description\": \"testfdgk dsfksdjf fsdf\",\n    \"start_date\": \"2022-01-10 00:00:00\",\n    \"end_date\": \"2022-01-13 00:00:00\",\n    \"lineup\": 23,\n    \"maximum_tickets\": 25,\n    \"user_id\": 1,\n    \"created_at\": \"2022-05-28T17:18:49.000000Z\",\n    \"updated_at\": \"2022-05-28T17:18:49.000000Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/events/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Event",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/events/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"events",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.21.6"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 May 2022 17:35:18 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"title\": \"My first event\",\n    \"description\": \"testfdgk dsfksdjf fsdf\",\n    \"start_date\": \"2022-01-10 00:00:00\",\n    \"end_date\": \"2022-01-13 00:00:00\",\n    \"lineup\": 23,\n    \"maximum_tickets\": 25,\n    \"user_id\": 1,\n    \"created_at\": \"2022-05-28T17:18:49.000000Z\",\n    \"updated_at\": \"2022-05-28T17:18:49.000000Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Store Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "My first event",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "testfdgk dsfksdjf fsdf",
+									"type": "text"
+								},
+								{
+									"key": "start_date",
+									"value": "2022-01-10",
+									"type": "text"
+								},
+								{
+									"key": "end_date",
+									"value": "2022-01-13",
+									"type": "text"
+								},
+								{
+									"key": "lineup",
+									"value": "23",
+									"type": "text"
+								},
+								{
+									"key": "maximum_tickets",
+									"value": "25",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/events",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Store Event",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "My first event",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "testfdgk dsfksdjf fsdf",
+											"type": "text"
+										},
+										{
+											"key": "start_date",
+											"value": "2022-01-10",
+											"type": "text"
+										},
+										{
+											"key": "end_date",
+											"value": "2022-01-13",
+											"type": "text"
+										},
+										{
+											"key": "lineup",
+											"value": "23",
+											"type": "text"
+										},
+										{
+											"key": "maximum_tickets",
+											"value": "25",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/events",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"events"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.21.6"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 May 2022 17:22:25 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": \"My first event\",\n    \"description\": \"testfdgk dsfksdjf fsdf\",\n    \"start_date\": \"2022-01-10\",\n    \"end_date\": \"2022-01-13\",\n    \"lineup\": \"23\",\n    \"maximum_tickets\": \"25\",\n    \"user_id\": 1,\n    \"updated_at\": \"2022-05-28T17:22:25.000000Z\",\n    \"created_at\": \"2022-05-28T17:22:25.000000Z\",\n    \"id\": 2\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "My first event updated",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "testfdgk dsfksdjf fsdf",
+									"type": "text"
+								},
+								{
+									"key": "start_date",
+									"value": "2022-01-10",
+									"type": "text"
+								},
+								{
+									"key": "end_date",
+									"value": "2022-01-13",
+									"type": "text"
+								},
+								{
+									"key": "lineup",
+									"value": "23",
+									"type": "text"
+								},
+								{
+									"key": "maximum_tickets",
+									"value": "25",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/events/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Store Event",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "My first event",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "testfdgk dsfksdjf fsdf",
+											"type": "text"
+										},
+										{
+											"key": "start_date",
+											"value": "2022-01-10",
+											"type": "text"
+										},
+										{
+											"key": "end_date",
+											"value": "2022-01-13",
+											"type": "text"
+										},
+										{
+											"key": "lineup",
+											"value": "23",
+											"type": "text"
+										},
+										{
+											"key": "maximum_tickets",
+											"value": "25",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/events",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"events"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.21.6"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 May 2022 17:22:25 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": \"My first event\",\n    \"description\": \"testfdgk dsfksdjf fsdf\",\n    \"start_date\": \"2022-01-10\",\n    \"end_date\": \"2022-01-13\",\n    \"lineup\": \"23\",\n    \"maximum_tickets\": \"25\",\n    \"user_id\": 1,\n    \"updated_at\": \"2022-05-28T17:22:25.000000Z\",\n    \"created_at\": \"2022-05-28T17:22:25.000000Z\",\n    \"id\": 2\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Ticket",
+			"item": [
+				{
+					"name": "TicketTypes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/ticket/type",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ticket",
+								"type"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetTicketTypes",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/ticket/type",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"ticket",
+										"type"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.21.6"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 May 2022 14:31:09 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Silver,\",\n        \"price\": 20.4,\n        \"created_at\": null,\n        \"updated_at\": null\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Gold,\",\n        \"price\": 25,\n        \"created_at\": null,\n        \"updated_at\": null\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Platinum\",\n        \"price\": 20.4,\n        \"created_at\": null,\n        \"updated_at\": null\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get All Tickets",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/tickets",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tickets"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Tickets",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/tickets",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"tickets"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.21.6"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 May 2022 19:09:47 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"user_id\": 1,\n        \"ticket_type_id\": 1,\n        \"event_id\": 1,\n        \"price\": 20.34,\n        \"discount\": 5,\n        \"customer_name\": \"test C\",\n        \"created_at\": \"2022-05-28T19:09:29.000000Z\",\n        \"updated_at\": \"2022-05-28T19:09:29.000000Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Store Ticket",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "price",
+									"value": "20.34",
+									"type": "text"
+								},
+								{
+									"key": "discount",
+									"value": "05.00",
+									"type": "text"
+								},
+								{
+									"key": "ticket_type_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "event_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "customer_name",
+									"value": "test C",
+									"type": "text"
+								},
+								{
+									"key": "maximum_tickets",
+									"value": "25",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/tickets",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tickets"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Store Ticket",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "price",
+											"value": "20.34",
+											"type": "text"
+										},
+										{
+											"key": "discount",
+											"value": "05.00",
+											"type": "text"
+										},
+										{
+											"key": "ticket_type_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "event_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "customer_name",
+											"value": "test C",
+											"type": "text"
+										},
+										{
+											"key": "maximum_tickets",
+											"value": "25",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/tickets",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"tickets"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.21.6"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 May 2022 19:09:29 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "55"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"price\": \"20.34\",\n    \"discount\": \"05.00\",\n    \"ticket_type_id\": \"1\",\n    \"event_id\": \"1\",\n    \"customer_name\": \"test C\",\n    \"user_id\": 1,\n    \"updated_at\": \"2022-05-28T19:09:29.000000Z\",\n    \"created_at\": \"2022-05-28T19:09:29.000000Z\",\n    \"id\": 1\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "localhost:8000/api"
+		},
+		{
+			"key": "token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjk0NDU1YzJhYTg1OTgwNmY1NjE5ZmE3MjU4NzNkZDVhM2Y2NDg3MDBjNjA5MDBiMjZmY2JkMjRhMzcyMmM2MWNjZmVkMzIwZjk4NTk3MjgiLCJpYXQiOjE2NTM3NDcyNTIuOTgzMDY3LCJuYmYiOjE2NTM3NDcyNTIuOTgzMDY4LCJleHAiOjE2Njk2NDQ4NTIuOTgwMjE4LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.J5OWxVYQejJro44zI-0OtvZMGnX_suGcQ1cBJsW04WaU0HareOuzSnA8TzCFju4vUVKj8nJfdBK3Zl5vMAs4gPAtcfBpSXKkKnVLjYlxD0qUxyN3zL-kd8tOrP5koayO6v3gRMCkVRyHddk3fRIWF7qXdq7XfE_1-PbvXRVNaQAwX3HlJlLWBT9hyVoQN9JB5M91PJJ1Ep5KcIqKzpjljh5hnyrEHOCZLFOVb-9t34PX40MXBPHho8V7ixphNPolmoPB3w3UGSnqDG2gk3wbmAA3PRHIirrsggCjfy7-8yoaHDG5gBp19jocU2zluRWBwJZXUnNBLx4lLop18jt_SJHayyEJuC4TZ1dYmYu_J1XHtZF4y5ENGhnqlRtrMU1GSAJ1M9dBZt2niURANnu-e2rRE4Dc6u3s1fpYBGl-Cma8DKsTtcS4cuYkhrfN-65xDKE4KEcLDa0klMRJIv7VAlqE_77sCVnkQMMvpDHRVPuCxPtIY75f9OBINeCEw9HlQxd0uyHr_eXTiXRUMCjAyCEbj7jI0_CLTGdf3TKxnibq3ZtHl2_Rxtaa1lqsld-wLEDJQK9wANHJ8msgG-TPcac9yFJiE8CSx3BqcFEoCFbVmN0k4SWdr-0U9ttPSzZM8g3zLoiA4DzXWJxrVfTjM1VZ-Y1ciGDyi29yxFrXSBc"
+		}
+	]
+}
