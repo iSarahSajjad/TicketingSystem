@@ -31,6 +31,8 @@ docker exec -it ticketing-app bash -c "php artisan key:generate"
 
 echo -e "${CYAN}${NC} Migrating Database  ${YELLOW}${NC}"
 docker exec -it ticketing-app bash -c "php artisan migrate"
+docker exec -it ticketing-app bash -c "php artisan passport:install"
+docker exec -it ticketing-app bash -c "php artisan db:seed"
 
 echo -e "${CYAN}${NC} Install npm packages and dev  ${YELLOW}${NC}"
 docker exec -it ticketing-app bash -c "npm install"

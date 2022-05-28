@@ -51,7 +51,9 @@ For installation on local I have created bash script which run docker and instal
 ```sh
 bash local-install.sh 
 ```
-
+Use Login via Credentials: 
+```sarah@gmail.com```
+```password```
 ## License
 
 proprietary
