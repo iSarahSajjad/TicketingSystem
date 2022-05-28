@@ -100,6 +100,6 @@ class EventController extends ApiBaseController
     public function destroy($id)
     {
         Event::findOrfail($id)->delete();
-
+        return $this->Response(['message' => 'Event Deleted']);
     }
 }

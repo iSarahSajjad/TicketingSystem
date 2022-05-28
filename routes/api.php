@@ -28,6 +28,7 @@ Route::middleware('auth:api')->group(function () {
     });
 
     Route::resource('events', EventController::class);
+    Route::resource('tickets', TicketController::class);
 
 
 });
