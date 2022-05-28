@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\TicketController;
+use App\Http\Controllers\Api\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,5 +23,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('login', [\App\Http\Controllers\Api\AuthController::class, 'login']);
 
 Route::middleware('auth:api')->group(function () {
+    Route::prefix('ticket')->controller(TicketController::class)->group(function () {
+        Route::get('/type', 'allTicketType');
+    });
+
+    Route::resource('events', EventController::class);
+
 
 });

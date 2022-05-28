@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\ApiBaseController;
 use Illuminate\Http\Request;
 use App\Models\User;
 
-class AuthController extends Controller
+class AuthController extends ApiBaseController
 {
 
     //Login Request
@@ -19,9 +19,9 @@ class AuthController extends Controller
 
         if (auth()->attempt($data)) {
             $token = auth()->user()->createToken('PassportAuthTicketing')->accessToken;
-            return response()->json(['token' => $token], 200);
+            return $this->Response(['token' => $token]);
         } else {
-            return response()->json(['error' => 'Unauthorised'], 401);
+            return $this->Response(['error' => 'Unauthorised'], 401);
         }
     }
 
